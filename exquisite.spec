@@ -1,30 +1,23 @@
-#Tarball of svn snapshot created as follows...
-#Cut and paste in a shell after removing initial #
-
-#svn co http://svn.enlightenment.org/svn/e/trunk/exquisite exquisite; \
-#cd exquisite; \
-#SVNREV=$(LANGUAGE=C svn info | grep "Last Changed Rev:" | cut -d: -f 2 | sed "s@ @@"); \
-#VERSION=$(cat configure.ac | grep "exquisite" | grep INIT | sed 's@\[@@g' | sed 's@\]@@g' | sed 's@)@@g' | cut -d, -f 2 | sed "s@ @@"); \
-#PKG_VERSION=$VERSION.$SVNREV; \
-#cd ..; \
-#tar -Jcf exquisite-$PKG_VERSION.tar.xz exquisite/ --exclude .svn --exclude .*ignore
-
-%define svnrev	60246
-
 Summary:	This is a psplash replacement that is very simple and uses EFL
 Name:		exquisite
-Version:	0.0.2
-Release:	0.%{svnrev}.1
+Version:	1.0.0
+Release:	2
+Group:		Graphical desktop/Enlightenment
 License:	BSD
 URL:		http://enlightenment.org/
-Source0: 	%{name}-%{version}.%{svnrev}.tar.xz
-Group:		Graphical desktop/Enlightenment 
+Source0: 	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
 
+BuildRequires:	doxygen
 BuildRequires:	edje
 BuildRequires:	embryo
 BuildRequires:	evas
 BuildRequires:	pkgconfig(ecore)
+BuildRequires:	pkgconfig(ecore-con)
+BuildRequires:	pkgconfig(ecore-evas)
 BuildRequires:	pkgconfig(edje)
+BuildRequires:	pkgconfig(eet)
+BuildRequires:	pkgconfig(eina)
+BuildRequires:	pkgconfig(evas)
 
 %description
 This is a psplash replacement that is very simple and uses EFL (Evas, Edje,
@@ -38,20 +31,17 @@ boot, but if you can, it is a lot more capable than other splash engines,
 while still running in the framebuffer.
 
 %prep
-%setup -qn %{name}
+%setup -q
 
 %build
-NOCONFIGURE=1 ./autogen.sh
+#NOCONFIGURE=1 ./autogen.sh
 %configure2_5x
-
 %make
 
 %install
-rm -fr %{buildroot}
 %makeinstall_std
 
 %files
 %{_bindir}/*
 %{_datadir}/exquisite/*
-
 
