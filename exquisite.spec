@@ -1,7 +1,7 @@
 Summary:	This is a psplash replacement that is very simple and uses EFL
 Name:		exquisite
 Version:	1.0.0
-Release:	2
+Release:	3
 Group:		Graphical desktop/Enlightenment
 License:	BSD
 URL:		http://enlightenment.org/
