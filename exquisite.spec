@@ -8,12 +8,11 @@ URL:		http://enlightenment.org/
 Source0: 	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
 
 BuildRequires:	doxygen
-BuildRequires:	edje
 BuildRequires:	embryo
-BuildRequires:	evas
 BuildRequires:	pkgconfig(ecore)
 BuildRequires:	pkgconfig(ecore-con)
 BuildRequires:	pkgconfig(ecore-evas)
+BuildRequires:	pkgconfig(eio)
 BuildRequires:	pkgconfig(edje)
 BuildRequires:	pkgconfig(eet)
 BuildRequires:	pkgconfig(eina)
