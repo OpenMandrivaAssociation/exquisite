@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(edje)
 BuildRequires:	pkgconfig(eet)
 BuildRequires:	pkgconfig(eina)
 BuildRequires:	pkgconfig(evas)
+BuildRequires:	pkgconfig(eio)
 
 %description
 This is a psplash replacement that is very simple and uses EFL (Evas, Edje,
