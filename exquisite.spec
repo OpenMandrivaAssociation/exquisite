@@ -4,7 +4,7 @@ Version:	1.0.0
 Release:	3
 Group:		Graphical desktop/Enlightenment
 License:	BSD
-URL:		http://enlightenment.org/
+URL:		https://enlightenment.org/
 Source0: 	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
 
 BuildRequires:	doxygen
